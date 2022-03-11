@@ -9,11 +9,12 @@ import org.springframework.data.domain.Persistable;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
-import lombok.Setter;
 
 @Table("ATAGLANCE_MENU_DETAIL")
-@Getter @Setter
+@Getter
 public class Detail implements Persistable<String>{
 	
 	@Id
@@ -33,13 +34,26 @@ public class Detail implements Persistable<String>{
 	@Column("fk_theme_id")
 	private String themeId;
 	
+	@JsonIgnore
 	@Override
 	public String getId() {
 		return id;
 	}
+	@JsonIgnore
 	@Override
 	public boolean isNew() {
 		return dateCreated == null;
+	}
+	
+	protected Detail() {}
+	
+	public Detail(String id, String name, int price, String memo, boolean enabled, String themeId) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.memo = memo;
+		this.enabled = enabled;
+		this.themeId = themeId;
 	}
 	
 }

@@ -12,11 +12,12 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
-import lombok.Setter;
 
 @Table("ATAGLANCE_MENU_THEME")
-@Getter @Setter
+@Getter
 public class Theme implements Persistable<String>{
 
 	@Id
@@ -35,13 +36,23 @@ public class Theme implements Persistable<String>{
 	@MappedCollection(keyColumn = "fk_theme_id", idColumn = "detail_id")
 	List<Detail> details = new ArrayList<>();
 	
+	@JsonIgnore
 	@Override
 	public String getId() {
 		return id;
 	}
+	@JsonIgnore
 	@Override
 	public boolean isNew() {
 		return dateCreated == null;
 	}
+	
+	protected Theme() {}
+	
+	public Theme(String id, String name, boolean enabled) {
+		this.id = id;
+		this.name = name;
+		this.enabled = enabled;
+	} 
 	
 }
