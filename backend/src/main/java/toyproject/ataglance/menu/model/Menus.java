@@ -9,6 +9,6 @@ import lombok.Setter;
 public class Menus {
 
 	private String theme;
-	private Map<String, Integer> menus;
+	private Map<String, String> menus;
 	
 }

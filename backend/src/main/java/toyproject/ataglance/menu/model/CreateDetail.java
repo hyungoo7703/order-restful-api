@@ -8,7 +8,7 @@ public class CreateDetail {
 
 	private String detailId;
 	private String detailName;
-	private int price;
+	private String price;
 	private String memo;
 	private String themeId;
 	
