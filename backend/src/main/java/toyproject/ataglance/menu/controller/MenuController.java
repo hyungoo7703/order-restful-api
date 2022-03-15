@@ -2,7 +2,6 @@ package toyproject.ataglance.menu.controller;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -44,25 +43,21 @@ public class MenuController {
 	
 	@GetMapping // 메뉴판 조회
 	public ResponseEntity<List<Menus>> findAll() {
+		
 		List<Menus> theMenus = new ArrayList<>(); // 실제 메뉴판(The Menus) 출력
 
-		Iterable<Theme> themes = new ArrayList<>();
-		themes = themeRepository.findAll();
+		Iterable<Theme> themes = themeRepository.findAll(); 
 		for (Theme theme : themes) {
-			Menus menu = new Menus(); 
-			menu.setTheme(theme.getName()); 
+			Menus menu = new Menus(theme.getName());
+			Map<String, String> menus = menu.getMenus(); // name : price 형태를 위해 Map으로 담아준다.
 			
-			Iterable<Detail> details = new ArrayList<>(); 
-			details = detailRepository.findByThemeId(theme.getId());
-			
-			Map<String, String> menus = new HashMap<String, String>(); // name : price 형태를 위해 Map으로 담아준다.
+			Iterable<Detail> details = detailRepository.findByThemeId(theme.getId()); 
 			for (Detail detail : details) {
 				menus.put(detail.getName(), myNumberFormatter.print(detail.getPrice(), Locale.KOREA));
 			}
-			menu.setMenus(menus);
-			
 			theMenus.add(menu);
 		}
+		
 		if(theMenus.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
@@ -74,6 +69,7 @@ public class MenuController {
 	
 	@PostMapping("/theme") // 주제 등록 (예: 메인, 사이드 등등)
 	public ResponseEntity<Theme> save(@RequestBody CreateTheme createTheme) {
+		
 		Theme theme = themeRepository.save(new Theme(createTheme.getThemeId(), createTheme.getThemeName(), true)); // default: enabled = true	
 		
 		return new ResponseEntity<>(theme, HttpStatus.CREATED);
@@ -81,6 +77,7 @@ public class MenuController {
 	
 	@DeleteMapping("/theme/{themeId}") // 주제 하나를 삭제 -> 주제 하위 메뉴 전부 같이 삭제
 	public ResponseEntity<HttpStatus> deleteByThemeId(@PathVariable("themeId") String themeId) {
+		
 		detailRepository.deleteAllByThemeId(themeId);	
 		themeRepository.deleteById(themeId);
 		
@@ -91,7 +88,6 @@ public class MenuController {
 	
 	@PostMapping("/detail") // 주제에 맞춰 메뉴 상세 등록
 	public ResponseEntity<Detail> save(@RequestBody CreateDetail createDetail) throws ParseException {
-		
 		
 		Detail detail = detailRepository.save(new Detail(
 														 createDetail.getDetailId(), 
@@ -107,6 +103,7 @@ public class MenuController {
 	
 	@DeleteMapping("/detail/{detailId}") // 메뉴 하나를 삭제 
 	public ResponseEntity<HttpStatus> deleteByDetailId(@PathVariable("detailId") String detailId) {
+		
 		detailRepository.deleteById(detailId);
 		
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);

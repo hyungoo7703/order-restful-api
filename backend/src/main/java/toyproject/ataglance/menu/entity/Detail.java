@@ -22,6 +22,7 @@ public class Detail implements Persistable<String>{
 	private String id;
 	@Column("detail_name")
 	private String name;
+	
 	private int price;
 	private String memo;
 	
@@ -31,6 +32,7 @@ public class Detail implements Persistable<String>{
 	private LocalDateTime dateUpdated;
 
 	private boolean enabled;
+	
 	@Column("fk_theme_id")
 	private String themeId;
 	
