@@ -15,3 +15,4 @@
 + [#1 프로젝트 환경설정](https://github.com/hyungoo7703/restaurant-management/issues/1) <br>
 + [#2 Menu DB 설계](https://github.com/hyungoo7703/restaurant-management/issues/2) <br>
 + [#3 Formatter 추가, Order, Sale 생각 ver 1.0](https://github.com/hyungoo7703/restaurant-management/issues/3) <br>
++ [#4 Order DB 추가](https://github.com/hyungoo7703/restaurant-management/issues/4)
