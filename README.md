@@ -16,3 +16,4 @@
 + [#2 Menu DB 설계](https://github.com/hyungoo7703/restaurant-management/issues/2) <br>
 + [#3 Formatter 추가, Order, Sale 생각 ver 1.0](https://github.com/hyungoo7703/restaurant-management/issues/3) <br>
 + [#4 Order DB 추가](https://github.com/hyungoo7703/restaurant-management/issues/4)
++ [#5 Exception, 추가 주문, 결제 전 주문 확정 구현](https://github.com/hyungoo7703/restaurant-management/issues/5)
