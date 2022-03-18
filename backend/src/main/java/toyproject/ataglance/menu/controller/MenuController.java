@@ -69,18 +69,14 @@ public class MenuController {
 	
 	@PostMapping("/theme") // 주제 등록 (예: 메인, 사이드 등등)
 	public ResponseEntity<Theme> save(@RequestBody CreateTheme createTheme) {
-		
 		Theme theme = themeRepository.save(new Theme(createTheme.getThemeId(), createTheme.getThemeName(), true)); // default: enabled = true	
-		
 		return new ResponseEntity<>(theme, HttpStatus.CREATED);
 	}
 	
 	@DeleteMapping("/theme/{themeId}") // 주제 하나를 삭제 -> 주제 하위 메뉴 전부 같이 삭제
 	public ResponseEntity<HttpStatus> deleteByThemeId(@PathVariable("themeId") String themeId) {
-		
 		detailRepository.deleteAllByThemeId(themeId);	
 		themeRepository.deleteById(themeId);
-		
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 	
@@ -103,9 +99,7 @@ public class MenuController {
 	
 	@DeleteMapping("/detail/{detailId}") // 메뉴 하나를 삭제 
 	public ResponseEntity<HttpStatus> deleteByDetailId(@PathVariable("detailId") String detailId) {
-		
 		detailRepository.deleteById(detailId);
-		
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 

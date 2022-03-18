@@ -6,7 +6,7 @@ import java.util.Map;
 import lombok.Getter;
 
 @Getter
-public class CreateOrder {
+public class CreateOrAddOrder {
 
 	private int tableNumber;
 	private Map<String, String> orders = new HashMap<>(); // { 메뉴 * 수량 : 가격 } 형태로 전송
