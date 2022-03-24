@@ -34,7 +34,7 @@ public class Theme implements Persistable<String>{
 	private boolean enabled;
 	
 	@MappedCollection(keyColumn = "fk_theme_id", idColumn = "detail_id")
-	List<Detail> details = new ArrayList<>();
+	private List<Detail> details = new ArrayList<>();
 	
 	@JsonIgnore
 	@Override

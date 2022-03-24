@@ -11,5 +11,4 @@ public class Sale { // 총 매출 엔티티
 	@Column("sale_id")
 	private Long id; // Auto-Increment
 	
-	// TODO 어떻게 표현할 것인가?
 }

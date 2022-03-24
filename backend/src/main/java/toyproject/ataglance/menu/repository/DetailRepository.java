@@ -1,5 +1,7 @@
 package toyproject.ataglance.menu.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -14,4 +16,5 @@ public interface DetailRepository extends CrudRepository<Detail, String> {
 	@Query("DELETE FROM ataglance_menu_detail WHERE fk_theme_id=:themeId")
 	void deleteAllByThemeId(String themeId);
 	
+	Optional<Detail> findByName(String detailName);
 }
