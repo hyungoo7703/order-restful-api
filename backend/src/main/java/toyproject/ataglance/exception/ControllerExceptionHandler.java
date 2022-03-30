@@ -18,6 +18,14 @@ public class ControllerExceptionHandler {
 
 		return message;
 	}
+	
+	@ExceptionHandler(NotANormalRequestException.class)
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
+	public ErrorMessage exceptionHandler(NotANormalRequestException ex, WebRequest request) {
+		ErrorMessage message = new ErrorMessage(HttpStatus.BAD_REQUEST.value(), LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+
+		return message;
+	}
 
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)

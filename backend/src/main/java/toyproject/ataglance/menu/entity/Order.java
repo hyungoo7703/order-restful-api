@@ -41,5 +41,15 @@ public class Order {
 	public void addDetail(Detail detail, int quantity) {
 		this.orderDetails.add(new OrderDetail(detail.getId(), detail.getPrice() * quantity, quantity));
 	}
+
+	public Order(Order order, OrderStatus orderStatus) {
+		this.id = order.id;
+		this.orderNumber = order.orderNumber;
+		this.dateCreated = order.dateCreated;
+		this.orderDetails = order.orderDetails;
+		this.orderStatus = orderStatus;
+	}
+	
+	
 	
 }
