@@ -17,3 +17,4 @@
 + [#4](https://github.com/hyungoo7703/restaurant-management/issues/4) Order DB 추가 <br>
 + [#5](https://github.com/hyungoo7703/restaurant-management/issues/5) Exception, 추가 주문, 결제 전 주문 확정 구현 <br>
 + [#6](https://github.com/hyungoo7703/restaurant-management/issues/6) 개체 관계 모델을 통한 Order DB 수정안 <br>
++ [#7](https://github.com/hyungoo7703/restaurant-management/issues/7) Failed-to-execute-DbAction-Insert <br>
