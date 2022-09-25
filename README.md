@@ -5,9 +5,8 @@
 
 + Project nickname: At A Glance (한 눈에)
 + Project participants: 강현구
-+ Project period: 2022.02.28 ~
 
-### Key Requirements: 한 눈에 볼 수 있는 매출 관리
+### Key Requirements: 한 눈에 볼 수 있는 매출 관리, RestAPI 개발
 
 -----
 ## 개발 진행 방향, 생각의 흐름 Issue에 정리
