@@ -2,6 +2,7 @@ package toyproject.ataglance.menu.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import toyproject.ataglance.exception.ResourceNotFoundException;
 import toyproject.ataglance.menu.entity.Order;
 import toyproject.ataglance.menu.model.AddtionalOrder;
 import toyproject.ataglance.menu.model.CreateOrder;
@@ -37,8 +39,19 @@ public class OrderController {
 		List<Order> orders = new ArrayList<>();
 		
 		orderRepository.findAll().forEach(orders::add); // 나눠 입력할 것인지 판단 (일단은 이렇게)
-		
+
 		return new ResponseEntity<>(orders, HttpStatus.OK);
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Order> findById(@PathVariable long id) {
+		Optional<Order> order = orderRepository.findById(id);
+
+		if(order.isEmpty()) {
+			new ResourceNotFoundException("찾을 수 없는 주문 입니다.");
+		}
+
+		return new ResponseEntity<>(order.get(), HttpStatus.OK);
 	}
 	
 	@PostMapping
