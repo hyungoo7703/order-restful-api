@@ -1,12 +1,11 @@
-# Restaurant-Management Project
+# Order Restful API
 
-## Web application for restaurant sales management.
-식당 매출 관리를 위한 웹 응용 소프트웨어
+## 주문 정보 출력 RestAPI 설계
 
 + Project nickname: At A Glance (한 눈에)
 + Project participants: 강현구
 
-### Key Requirements: 한 눈에 볼 수 있는 매출 관리, RestAPI 개발
+### Key Requirements: 한 눈에 볼 수 있는 주문정보
 
 -----
 ## 개발 진행 방향, 생각의 흐름 Issue에 정리
@@ -17,3 +16,7 @@
 + [#5](https://github.com/hyungoo7703/restaurant-management/issues/5) Exception, 추가 주문, 결제 전 주문 확정 구현 <br>
 + [#6](https://github.com/hyungoo7703/restaurant-management/issues/6) 개체 관계 모델을 통한 Order DB 수정안 <br>
 + [#7](https://github.com/hyungoo7703/restaurant-management/issues/7) Failed-to-execute-DbAction-Insert <br>
+
+-----
+## 최종 완성된 API 명세
+<img width="100%" alt="API 명세" src="https://user-images.githubusercontent.com/93297109/204088553-71faeaf1-075d-48ac-aa42-f3b9e296f167.png">
