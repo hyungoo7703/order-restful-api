@@ -96,14 +96,15 @@ public class MenuController {
 		
 		return new ResponseEntity<>(detail, HttpStatus.CREATED);
 	}
-	
-	@DeleteMapping("/detail/{detailId}") // 메뉴 하나를 삭제 
+
+	/*
+	수정 기능은 불필요 하다 느낌 enabled = false 정도는 추가가능 (활성화, 비활성화)
+	 */
+
+	@DeleteMapping("/detail/{detailId}") // 메뉴 하나를 삭제
 	public ResponseEntity<HttpStatus> deleteByDetailId(@PathVariable("detailId") String detailId) {
 		detailRepository.deleteById(detailId);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
-	
-	// TODO 수정 기능은 불필요 하다 느낌, 단 enabled = false는 추가 (활성화, 비활성화) -> 추후 이를 통해 어떻게 표현 할 것인지 고민
-	// TODO 셋트메뉴 
 }

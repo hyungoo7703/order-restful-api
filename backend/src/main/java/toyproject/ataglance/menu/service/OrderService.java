@@ -83,11 +83,5 @@ public class OrderService {
 		Order confirmOrder = new Order(order, OrderStatus.PAY_COMPLETE);
 		return orderRepository.save(confirmOrder);
 	}
-	
-	
-	
-	
-	
-	// TODO 현재 총 가격과 총 주문내역만 출력시 전표로 보는 거와 차이가 없고, 사용의 이유는 없다. 따라서 어떤점을 차별성으로 줄 지 고려해본다.
 
 }

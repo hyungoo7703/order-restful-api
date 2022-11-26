@@ -38,9 +38,6 @@ public class OrderController {
 		
 		orderRepository.findAll().forEach(orders::add); // 나눠 입력할 것인지 판단 (일단은 이렇게)
 		
-		
-		
-		
 		return new ResponseEntity<>(orders, HttpStatus.OK);
 	}
 	
