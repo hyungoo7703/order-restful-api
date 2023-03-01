@@ -8,7 +8,7 @@
 ### Key Requirements: 한 눈에 볼 수 있는 주문정보
 
 -----
-## 개발 진행 방향, 생각의 흐름 Issue에 정리
+## Issues
 + [#1](https://github.com/hyungoo7703/restaurant-management/issues/1) 프로젝트 환경설정 <br>
 + [#2](https://github.com/hyungoo7703/restaurant-management/issues/2) Menu DB 설계 <br>
 + [#3](https://github.com/hyungoo7703/restaurant-management/issues/3) Formatter 추가, Order, Sale 생각 ver 1.0 <br>
