@@ -8,7 +8,7 @@
 
 -----
 
-## Issues
+# Issues
 
 + [#1](https://github.com/hyungoo7703/restaurant-management/issues/1) 프로젝트 환경설정 <br>
 + [#2](https://github.com/hyungoo7703/restaurant-management/issues/2) Menu DB 설계 <br>
@@ -20,6 +20,3 @@
 + [#8](https://github.com/hyungoo7703/restaurant-management/issues/8) 프로젝트 개선 계획 <br>
 
 -----
-
-## 최종 완성된 API 명세
-<img width="100%" alt="API 명세" src="https://user-images.githubusercontent.com/93297109/204088553-71faeaf1-075d-48ac-aa42-f3b9e296f167.png">
