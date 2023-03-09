@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import toyproject.ataglance.menu.entity.Category;
+import toyproject.ataglance.menu.entity.Theme;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

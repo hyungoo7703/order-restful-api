@@ -1,6 +1,7 @@
 package toyproject.ataglance.menu.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -47,4 +48,5 @@ public class Category implements Persistable<String> {
         this.name = name;
         this.enabled = enabled;
     }
+
 }

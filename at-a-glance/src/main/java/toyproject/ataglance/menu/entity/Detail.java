@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
+import lombok.AllArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -43,13 +44,13 @@ public class Detail implements Persistable<String>{
 
 	@MappedCollection(idColumn = "DETAIL_ID")
 	private Set<OrderDetail> orderDetails = new HashSet<>();
-	
+
 	@JsonIgnore
 	@Override
 	public boolean isNew() {
 		return dateCreated == null;
 	}
-	
+
 	protected Detail() {}
 	
 	public Detail(String id, String name, int price, int margin, String memo, boolean enabled, boolean onEvent, String themeId) {
