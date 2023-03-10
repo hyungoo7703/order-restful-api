@@ -18,5 +18,5 @@
 + [#6](https://github.com/hyungoo7703/restaurant-management/issues/6) 개체 관계 모델을 통한 Order DB 수정안 <br>
 + [#7](https://github.com/hyungoo7703/restaurant-management/issues/7) 계속된 에러 발생 해결기: Failed-to-execute-DbAction-Insert <br>
 + [#8](https://github.com/hyungoo7703/restaurant-management/issues/8) 프로젝트 개선 계획 <br>
-
++ [#9](https://github.com/hyungoo7703/restaurant-management/issues/9) 메뉴 관련 API 완성 <br>
 -----
